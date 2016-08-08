@@ -139,7 +139,7 @@
     /* copy prototype and constructor over, reattach $extend and
        return the class */
     rv.prototype = prototype;
-    rv.constructor = rv;
+    rv.prototype.constructor = rv;
     rv.$extend = Class.$extend;
     rv.$withData = Class.$withData;
     return rv;

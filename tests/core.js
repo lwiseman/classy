@@ -220,3 +220,15 @@ test('class variable inheritance', function() {
   equal(SubSubTest.bar, SubTest.bar, 'SubSubTest.bar is Test.bar');
   equal(SubSubTest.foo, 999, 'SubSubTest.foo has been overridden');
 });
+
+test('constructor pointer is corrected to class function object', function() {
+  var
+    Sheep = Animal.$extend({}),
+    dolly = Sheep({
+      name: 'Dolly'
+    }),
+    clone = dolly.clone({
+      name: 'Dolly'
+    });
+  ok(clone instanceof Sheep);
+});

@@ -19,6 +19,10 @@ var Animal = Class.$extend({
 
   dead: function() {
     return (this.health <= 0);
+  },
+
+  clone: function(options) {
+    return this.constructor(options);
   }
 });
 
